@@ -1,0 +1,17 @@
+// ========basics========//
+@import 'basics/main';
+
+// ========helpers========//
+@import 'helpers/mixins';
+@import 'helpers/variables';
+
+// ========layouts========//
+@import 'layouts/progress_bar';
+@import 'layouts/Q-buttons';
+@import 'layouts/stepper_component';
+
+// ========pages========//
+@import 'pages/informations';
+@import 'pages/questions';
+@import 'pages/result';
+
