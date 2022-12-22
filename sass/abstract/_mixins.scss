@@ -1,0 +1,41 @@
+
+@mixin border($color) {
+    border: 1px solid $color;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+@mixin trans{
+    transition:0.3s ;
+    -webkit-transition:0.3s ;
+    -moz-transition:0.3s ;
+    -ms-transition:0.3s ;
+    -o-transition:0.3s ;
+}
+
+@mixin button($h) {
+        width: 20rem;
+        height: $h;
+        margin: 1rem;
+        padding: 0.5rem;
+        color: $text-color;
+        font-weight: 300;
+        font-size: 1rem;
+        background: none;
+        @include border($text-color);
+        @include trans();
+
+        &:hover{
+            background: $text-color;
+            @include border($main-color);
+            color: $main-color;
+        }
+        &:active{
+            background: $secondary-color;
+            @include border($secondary-color);
+            color: $main-color;
+        }
+}

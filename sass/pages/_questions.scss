@@ -1,0 +1,29 @@
+
+
+.quizz{
+  width: 45rem;
+  margin-top: 5rem;
+  &_question{
+    margin-left: 1rem;
+    font-weight: 200;
+  }
+  &_answers{
+    &_each_circle{
+        width: 1.7rem;
+        height: 1.7rem;
+        padding-top:0.3rem ;
+        background-color: none;
+        @include border($text-color);
+        border-radius: 50%;
+        display: block;
+        float: top;
+        margin-top: -2rem ;
+        margin-bottom: 1rem;
+    }
+    &_each{
+        @include button(8rem);
+    }
+ 
+  }
+}
+

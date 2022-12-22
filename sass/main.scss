@@ -1,14 +1,15 @@
-// ========basics========//
-@import 'basics/main';
+// ========abstract========//
+@import 'abstract/mixins';
+@import 'abstract/variables';
 
-// ========helpers========//
-@import 'helpers/mixins';
-@import 'helpers/variables';
+// ========base========//
+@import 'base/main';
 
 // ========layouts========//
 @import 'layouts/progress_bar';
-@import 'layouts/Q-buttons';
-@import 'layouts/stepper_component';
+
+// ========components========//
+@import 'components/stepper_component';
 
 // ========pages========//
 @import 'pages/informations';
