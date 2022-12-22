@@ -30,22 +30,22 @@
                <li>there is no time limit </li>
             </ul>
         </section>
-     <button class="start_button" id="start_button" type="submit" onclick="displayQuestions()">Start</button>
+     <button class="start_button" id="start_button" type="submit" onclick="startQuizz()">Start</button>
       </section>
    </section>
 
    <section class="second_pg" id="second_pg">
         <div class="progress">
-            <span><span class="num" >1</span>/10</span>
-            <div class="progressBar"></div>
+            <span><span class="num" id="P-num" ></span>/10</span>
+            <div class="progressBar" id="progressBar"></div>
         </div>
         <section class="quizz" id="quizz">
-            <h2 class="quizz_question">Why is AWS more economical than traditional data centers for applications with varying compute workloads?</h2>
+            <h2 class="quizz_question" id="quizz_question">question</h2>
             <section  class="quizz_answers">
-                <button  class="quizz_answers_each"><span class="quizz_answers_each_circle">A</span> Amazon EC2 costs are billed on a monthly basis</button>
-                <button  class="quizz_answers_each"><span class="quizz_answers_each_circle">B</span> Users retain full administrative access to their Amazon EC2 instances</button>
-                <button  class="quizz_answers_each"><span class="quizz_answers_each_circle">C</span> Amazon EC2 instances can be launched on demand when needed</button>
-                <button  class="quizz_answers_each"><span class="quizz_answers_each_circle">D</span> Users can permanently run enough instances to handle peak workloads</button>
+                <button  class="quizz_answers_each" id="A1"><span class="quizz_answers_each_circle">A</span> Answer1</button>
+                <button  class="quizz_answers_each"id="A2"><span class="quizz_answers_each_circle">B</span> Answer2</button>
+                <button  class="quizz_answers_each"id="A3"><span class="quizz_answers_each_circle">C</span> Answer2</button>
+                <button  class="quizz_answers_each"id="A4"><span class="quizz_answers_each_circle">D</span> Answer3</button>
             </section>
         </section>
    </section>
@@ -70,4 +70,5 @@
 
 </body>
 
+<script src="js/data.js"></script>
 <script src="js/main.js"></script>
