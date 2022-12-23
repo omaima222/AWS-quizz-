@@ -1,5 +1,12 @@
 
 
+.second_pg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .quizz{
   width: 45rem;
   margin-top: 5rem;
@@ -23,7 +30,6 @@
     &_each{
         @include button(8rem);
     }
- 
-  }
+}
 }
 

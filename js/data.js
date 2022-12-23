@@ -51,7 +51,7 @@ let questions = [
 
     },
     {
-        'question' :   ') Which component of the AWS global infrastructure does Amazon CloudFront use to ensure low-latency delivery?',
+        'question' :   'Which component of the AWS global infrastructure does Amazon CloudFront use to ensure low-latency delivery?',
         'choice_A' :   'AWS Regions',
         'choice_B' :   'Edge locations',
         'choice_C' :   'Availability Zones',
@@ -61,7 +61,7 @@ let questions = [
 
     },
     {
-        'question' :   ') How would a system administrator add an additional layer of login security to a user s AWS Management Console?',
+        'question' :   'How would a system administrator add an additional layer of login security to a user s AWS Management Console?',
         'choice_A' :   'Use Amazon Cloud Directory',
         'choice_B' :   'Audit AWS Identity and Access Management (IAM) roles',
         'choice_C' :   'Enable multi-factor authentication',

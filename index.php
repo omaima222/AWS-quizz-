@@ -8,10 +8,10 @@
 
     <div class="contains_stepper">
         <div class="stepper">
-            <div class="steps" id="steps"></div>
+            <div class="steps" id="stepss"></div>
             <div class="circle active" id="circle">1</div>
-            <div class="circle" id="circle">2</div>
-            <div class="circle" id="circle">3</div>
+            <div class="circle" id="circle2">2</div>
+            <div class="circle" id="circle3">3</div>
         </div>
     </div>
 
@@ -35,9 +35,12 @@
    </section>
 
    <section class="second_pg" id="second_pg">
-        <div class="progress">
-            <span><span class="num" id="P-num" ></span>/10</span>
-            <div class="progressBar" id="progressBar"></div>
+        <div class="Allprogress">
+            <div  class="progress">
+                <span class="progressNum"><span class="num" id="P-num" ></span>/10</span>
+                <div class="progressBar" id="progressBar"></div>
+                <div class=" progressstart" id="progressstart"></div>
+            </div>
         </div>
         <section class="quizz" id="quizz">
             <h2 class="quizz_question" id="quizz_question">question</h2>
