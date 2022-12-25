@@ -44,7 +44,7 @@
         </div>
         <section class="quizz" id="quizz">
             <h2 class="quizz_question" id="quizz_question">question</h2>
-            <section  class="quizz_answers">
+            <section  class="quizz_answers" id="quizz_answers">
                 <button  class="quizz_answers_each" id="A1"><span class="quizz_answers_each_circle">A</span> Answer1</button>
                 <button  class="quizz_answers_each"id="A2"><span class="quizz_answers_each_circle">B</span> Answer2</button>
                 <button  class="quizz_answers_each"id="A3"><span class="quizz_answers_each_circle">C</span> Answer2</button>
@@ -57,7 +57,7 @@
         <h1 class="congrats">Congrats !</h1>
         <section class="result">
             <h2>Your result</h2>
-            <h2><span class="num">8</span>/10</h2>
+            <h2><span class="num" id="resultnum">8</span>/10</h2>
         </section>
         <section class="explication">
             <h2>explication and answers</h2>
