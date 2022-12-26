@@ -54,19 +54,17 @@
    </section>
 
    <section class="third_pg" id="third_pg">
-        <h1 class="congrats">Congrats !</h1>
+        <h1 class="congrats" id="congrats">Congrats !</h1>
         <section class="result">
             <h2>Your result</h2>
             <h2><span class="num" id="resultnum">8</span>/10</h2>
         </section>
         <section class="explication">
-            <h2>explication and answers</h2>
-            <ul class="answers">
-                <li class="answers_Q">Why is AWS more economical than traditional data centers for applications with varying compute workloads?
-                    <div class="answers_true"><span class="answers_circle">A</span><p>The ability to launch instances on demand when needed allows users to launch and terminate instances in response to a varying workload.This is a more economical practice than purchasing enough on-premises servers to handle the peak load.</p></div>
-                </li><li class="answers_Q">Why is AWS more economical than traditional data centers for applications with varying compute workloads?
-                    <div class="answers_true"><span class="answers_circle">A</span><p>The ability to launch instances on demand when needed allows users to launch and terminate instances in response to a varying workload.This is a more economical practice than purchasing enough on-premises servers to handle the peak load.</p></div>
-                </li>
+            <h2>explanation for uncorrect answerst</h2>
+            <ul class="answers" id="answers">
+                <!-- <li class="answers_Q" id="answers_Q">Why is AWS more economical than traditional data centers for applications with varying compute workloads?
+                    <div class="answers_true" id="answers_true"><span class="answers_circle" id="corr">A</span><p id="exp">The ability to launch instances on demand when needed allows users to launch and terminate instances in response to a varying workload.This is a more economical practice than purchasing enough on-premises servers to handle the peak load.</p></div>
+                </li> -->
             </ul>
         </section>
    </section>

@@ -24,32 +24,65 @@ let steps = document.getElementById("stepss");
 //========result=======//
 let result = 0;
 let resultnum = document.getElementById("resultnum");
+let congrats = document.getElementById("congrats");
+let answerscorrect = document.getElementById("answers");
 
 let randomQuestions;
 let currentIndex;
+let explications = [];
+
 
 //========clicks=======//
 
 AnswerA.onclick=function(){
+    if(questions[currentIndex].options[0].isCorrect){
+        result++
+    }else{
+        explications.push(questions[currentIndex].explanation)
+    }
     currentIndex++;
+    if(currentIndex>9){
+        ShowResult()
+    }
     NextQuestion(currentIndex)
-    ShowResult()
+
 }
 AnswerB.onclick=function(){
+    if(questions[currentIndex].options[1].isCorrect){
+        result++
+    }else{
+        explications.push(questions[currentIndex].explanation)
+    }
     currentIndex++;
+    if(currentIndex>9){
+        ShowResult()
+    }
     NextQuestion(currentIndex)
-    ShowResult()
 }
 AnswerC.onclick=function(){
+    if(questions[currentIndex].options[2].isCorrect){
+        result++
+    }else{
+        explications.push(questions[currentIndex].explanation)
+    }
     currentIndex++;
+    if(currentIndex>9){
+        ShowResult()
+    }
     NextQuestion(currentIndex)
-    ShowResult()
 
 }
 AnswerD.onclick=function(){
+    if(questions[currentIndex].options[3].isCorrect){
+        result++
+    }else{
+        explications.push(questions[currentIndex].explanation)
+    }
     currentIndex++;
+    if(currentIndex>9){
+        ShowResult()
+    }
     NextQuestion(currentIndex)
-    ShowResult()
 
 }
 
@@ -63,12 +96,14 @@ function startQuizz(){
     randomQuestions = questions.sort(()=> Math.random() - .5);
     currentIndex = 0;
     NextQuestion(currentIndex);
+    circle3.classList.remove("active");
     circle2.classList.add("active");
-    steps.style.height = 5+"rem";
+    steps.style.height = 5+"rem"; 
 }
 
 function  NextQuestion(index){
     displayQuestions(randomQuestions[index]);
+    console.log(index);
     // resetQuestions();
 }
 
@@ -79,12 +114,12 @@ function displayQuestions(questions){
     AnswerB.innerText = questions.options[1].option;
     AnswerC.innerText = questions.options[2].option;
     AnswerD.innerText = questions.options[3].option;
-    // for(let i=0;i>4;i++){
+    // for(let i=0;i<4;i++){
     //     let Qbutton = document.createElement('button');
     //     Qbutton.innerText= questions.options.option;
     //     Qbutton.classList.add("quizz_answers_each")
     //     // Qbutton.setAttribute('id', "A"+i)
-    //     AllAnswers.appendChild(Qbutton); 
+        // AllAnswers.appendChild(Qbutton); 
     // };
     p_num.innerText =  currentIndex+1;
     for(let i=0;i<currentIndex+2;i++){
@@ -99,14 +134,42 @@ function resetQuestions(){
 }
 
 function ShowResult(){
-    if(currentIndex>8){
         pageTwo.style.display ="none"
         pageThree.style.display ="block"
         circle3.classList.add("active");
         steps.style.height = 10+"rem";
         resultnum.innerHTML= result;
-        console.log(result)
-    }
-    
+        for(let i=0;i<explications.length;i++){
+            let answerscorrect2 = document.createElement('li');
+            answerscorrect2.classList.add("answers_Q");
+            answerscorrect2.innerText=explications[i][0].question;
+            let answersdiv = document.createElement('div');
+            answersdiv.classList.add("answers_true");
+
+            let corr = document.createElement('span');
+            corr.innerText= explications[i][2].corr;
+            corr.classList.add("answers_circle")
+            answersdiv.appendChild(corr);
+
+            let exp = document.createElement('p');
+            exp.innerText= explications[i][1].exp;
+            answersdiv.appendChild(exp);
+           
+            answerscorrect2.appendChild(answersdiv);
+            answerscorrect.appendChild(answerscorrect2);
+        }
+        if(result>=8){
+            congrats.innerHTML=" Great Job !"
+        }else if(result==7 || result==6){
+            congrats.innerHTML=" Good Job !"
+        }else if(result==5){
+            congrats.innerHTML=" Not Bad "
+        }else if(result<5){
+            congrats.innerHTML=" :/ "
+        }
+
+        
+        // console.log(result)
+
 }
 

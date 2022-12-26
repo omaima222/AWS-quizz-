@@ -30,6 +30,9 @@
     list-style: decimal;
     li{
         margin-top: 2rem;
+        p{
+            margin-left: 1rem;
+        }
     }
     &_true{
         background: none;
@@ -43,13 +46,15 @@
         background-color: none;
         @include border($text-color);
         border-radius: 50%;
-        width: 2.5rem;
+        width: 2rem;
         height: 1.5rem;
         padding-left: 0.4rem ;
-        display: inline-block;
         color: $secondary-color;
-        margin-right: 0.7rem;
     }
 }
 
+.restartButton{
+    @include button(3rem);
+    left: 40%;
+}
 
