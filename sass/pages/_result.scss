@@ -44,17 +44,12 @@
     }
     &_circle{
         background-color: none;
-        @include border($text-color);
+        // @include border($text-color);
         border-radius: 50%;
         width: 2rem;
         height: 1.5rem;
         padding-left: 0.4rem ;
         color: $secondary-color;
     }
-}
-
-.restartButton{
-    @include button(3rem);
-    left: 40%;
 }
 

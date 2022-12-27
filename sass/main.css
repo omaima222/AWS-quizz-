@@ -14,9 +14,8 @@ body {
 }
 
 .Allprogress {
-  position: fixed;
   top: 7%;
-  left: 20%;
+  left: 10%;
 }
 
 .progress {
@@ -24,7 +23,7 @@ body {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  width: 50rem;
+  width: 100% rem;
 }
 
 .progressNum {
@@ -34,7 +33,7 @@ body {
 .progressBar {
   background-color: #ececec;
   height: 0.4rem;
-  width: 44rem;
+  width: 41rem;
   border-radius: 1rem;
   -webkit-border-radius: 1rem;
   -moz-border-radius: 1rem;
@@ -47,11 +46,11 @@ body {
 .progressstart {
   height: 0.4rem;
   background-color: #85CD72;
-  transition: 0.3s ease-in;
-  -webkit-transition: 0.3s ease-in;
-  -moz-transition: 0.3s ease-in;
-  -ms-transition: 0.3s ease-in;
-  -o-transition: 0.3s ease-in;
+  transition: 0.5s ease-in;
+  -webkit-transition: 0.5s ease-in;
+  -moz-transition: 0.5s ease-in;
+  -ms-transition: 0.5s ease-in;
+  -o-transition: 0.5s ease-in;
   position: absolute;
   border-radius: 1rem;
   left: 7%;
@@ -216,11 +215,17 @@ body {
 
 .quizz {
   width: 45rem;
+  padding: 2rem;
   margin-top: 5rem;
 }
 .quizz_question {
   margin-left: 1rem;
   font-weight: 200;
+}
+.quizz_answers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .quizz_answers_each_circle {
   width: 1.7rem;
@@ -229,11 +234,14 @@ body {
   background-color: none;
   border: 1px solid #ececec;
   border-radius: 20px;
-  border-radius: 50%;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
   display: block;
-  float: top;
-  margin-top: -2rem;
-  margin-bottom: 1rem;
+  float: left;
+  margin-top: -3rem;
+  margin-bottom: 0rem;
 }
 .quizz_answers_each {
   width: 20rem;
@@ -333,59 +341,9 @@ body {
 }
 .answers_circle {
   background-color: none;
-  border: 1px solid #ececec;
-  border-radius: 20px;
   border-radius: 50%;
   width: 2rem;
   height: 1.5rem;
   padding-left: 0.4rem;
   color: #85CD72;
-}
-
-.restartButton {
-  width: 20rem;
-  height: 3rem;
-  margin: 1rem;
-  padding: 0.5rem;
-  color: #ececec;
-  font-weight: 300;
-  font-size: 1rem;
-  background: none;
-  border: 1px solid #ececec;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  transition: 0.3 s;
-  -webkit-transition: 0.3 s;
-  -moz-transition: 0.3 s;
-  -ms-transition: 0.3 s;
-  -o-transition: 0.3 s;
-  left: 40%;
-}
-.restartButton:hover {
-  background: #ececec;
-  border: 1px solid #040610;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  color: #040610;
-}
-.restartButton:active {
-  background: #85CD72;
-  border: 1px solid #85CD72;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  color: #040610;
-  transition: 0 s;
-  -webkit-transition: 0 s;
-  -moz-transition: 0 s;
-  -ms-transition: 0 s;
-  -o-transition: 0 s;
 }

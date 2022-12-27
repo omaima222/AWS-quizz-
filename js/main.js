@@ -26,11 +26,12 @@ let result = 0;
 let resultnum = document.getElementById("resultnum");
 let congrats = document.getElementById("congrats");
 let answerscorrect = document.getElementById("answers");
+let explications = [];
 
 let randomQuestions;
 let currentIndex;
-let explications = [];
 
+moveFirst();
 
 //========clicks=======//
 
@@ -101,35 +102,43 @@ function startQuizz(){
     steps.style.height = 5+"rem"; 
 }
 
-function  NextQuestion(index){
+function NextQuestion(index){
     displayQuestions(randomQuestions[index]);
     console.log(index);
-    // resetQuestions();
 }
 
 function displayQuestions(questions){
+    move()
     Question.innerText = questions.question;
-
     AnswerA.innerText = questions.options[0].option;
     AnswerB.innerText = questions.options[1].option;
     AnswerC.innerText = questions.options[2].option;
     AnswerD.innerText = questions.options[3].option;
-    // for(let i=0;i<4;i++){
-    //     let Qbutton = document.createElement('button');
-    //     Qbutton.innerText= questions.options.option;
-    //     Qbutton.classList.add("quizz_answers_each")
-    //     // Qbutton.setAttribute('id', "A"+i)
-        // AllAnswers.appendChild(Qbutton); 
-    // };
-    p_num.innerText =  currentIndex+1;
-    for(let i=0;i<currentIndex+2;i++){
-        progress.style.width = i*4.4+"rem";
-    }
-}
 
-function resetQuestions(){
-    while(AllAnswers.firstChild){
-        AllAnswers.removeChild(AllAnswers.firstChild)
+    let Acircle = document.createElement("div");
+    Acircle.classList.add("quizz_answers_each_circle");
+    Acircle.innerHTML="A";
+    AnswerA.appendChild(Acircle);
+
+    let Bcircle = document.createElement("div");
+    Bcircle.classList.add("quizz_answers_each_circle");
+    Bcircle.innerHTML="B";
+    AnswerB.appendChild(Bcircle);
+
+    let Ccircle = document.createElement("div");
+    Ccircle.classList.add("quizz_answers_each_circle");
+    Ccircle.innerHTML="C";
+    AnswerC.appendChild(Ccircle);
+
+    let Dcircle = document.createElement("div");
+    Dcircle.classList.add("quizz_answers_each_circle");
+    Dcircle.innerHTML="D";
+    AnswerD.appendChild(Dcircle);
+    
+
+    p_num.innerText =  currentIndex+1;
+    for(let i=0;i<currentIndex+1;i++){
+        progress.style.width = i*4.1+"rem";
     }
 }
 
@@ -139,6 +148,7 @@ function ShowResult(){
         circle3.classList.add("active");
         steps.style.height = 10+"rem";
         resultnum.innerHTML= result;
+
         for(let i=0;i<explications.length;i++){
             let answerscorrect2 = document.createElement('li');
             answerscorrect2.classList.add("answers_Q");
@@ -158,18 +168,98 @@ function ShowResult(){
             answerscorrect2.appendChild(answersdiv);
             answerscorrect.appendChild(answerscorrect2);
         }
+
         if(result>=8){
             congrats.innerHTML=" Great Job !"
         }else if(result==7 || result==6){
             congrats.innerHTML=" Good Job !"
-        }else if(result==5){
-            congrats.innerHTML=" Not Bad "
-        }else if(result<5){
+        }else if(result<=5){
             congrats.innerHTML=" :/ "
         }
 
-        
-        // console.log(result)
-
 }
 
+function move(){
+
+    gsap.from(".quizz_answers_each", { 
+        duration: 0.5,
+        opacity:0,
+        y: "10vh",
+        ease: 'circ',
+        stagger : .2,
+        delay :0.5
+    })
+    gsap.from(".quizz_question", {
+        duration: 0.7,
+        x: "-10rem",
+        opacity: 0,
+        ease: 'circ'
+    })
+    gsap.from(".congrats" , {
+        duration: 1,
+        opacity:0,
+        ease: 'circ'
+    })
+    gsap.from(".result" , {
+        duration: 1,
+        opacity:0,
+        y: "-5rem",
+        ease: 'circ'
+    })
+    gsap.from(".explication_title" , {
+        duration: 0.5,
+        opacity:0,
+        delay: 1,
+        ease: 'circ'
+    })
+    gsap.from(".answers_Q" , {
+        duration: 1,
+        y: "100vh",
+        delay: 1,
+        stagger : .4,
+        delay: 1,
+        ease: 'circ'
+    })
+}
+
+function moveFirst(){
+    gsap.from(".contains_stepper",{
+        duration: 1,
+        x: "-5rem",
+        ease: 'circ'
+    })   
+    gsap.from(".logo",{
+        duration: 1,
+        y: "-1rem",
+        opacity:0,
+        ease: 'circ'
+    })   
+    gsap.from(".infos_p",{
+        duration: 1,
+        y: "-1rem",
+        opacity:0,
+        ease: 'circ',
+        delay: 0.5
+    })   
+    gsap.from(".exclam",{
+        duration: 1,
+        x: "-2rem",
+        opacity:0,
+        ease: 'circ',
+        delay: 1
+    })   
+    gsap.from(".infos_list_items",{
+        duration: 1,
+        y: "-2rem",
+        opacity:0,
+        ease: 'circ',
+        delay: 1.2,
+        stagger:0.2
+    })   
+    gsap.from(".start_button",{
+        duration: 1,
+        opacity:0,
+        ease: 'circ',
+        delay:2
+    })   
+}

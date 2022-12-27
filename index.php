@@ -25,9 +25,9 @@
         <section class="alist" >
             <span class="exclam">!</span>
             <ul class="infos_list">
-               <li>this quizz contains 10 questions</li>
-               <li>you have 4 options to choose the right answer from</li>
-               <li>there is no time limit </li>
+               <li class="infos_list_items">this quizz contains 10 questions</li>
+               <li class="infos_list_items">you have 4 options to choose the right answer from</li>
+               <li class="infos_list_items">there is no time limit </li>
             </ul>
         </section>
      <button class="start_button" id="start_button" type="submit" onclick="startQuizz()">Start</button>
@@ -45,10 +45,14 @@
         <section class="quizz" id="quizz">
             <h2 class="quizz_question" id="quizz_question">question</h2>
             <section  class="quizz_answers" id="quizz_answers">
-                <button  class="quizz_answers_each" id="A1"><span class="quizz_answers_each_circle">A</span> Answer1</button>
-                <button  class="quizz_answers_each"id="A2"><span class="quizz_answers_each_circle">B</span> Answer2</button>
-                <button  class="quizz_answers_each"id="A3"><span class="quizz_answers_each_circle">C</span> Answer2</button>
-                <button  class="quizz_answers_each"id="A4"><span class="quizz_answers_each_circle">D</span> Answer3</button>
+                <div class="The2options">
+                    <button  class="quizz_answers_each" id="A1"><span class="quizz_answers_each_circle">A</span> Answer1</button>
+                    <button  class="quizz_answers_each"id="A2"><span class="quizz_answers_each_circle">B</span> Answer2</button>
+                </div>
+                <div  class="The2options">
+                    <button  class="quizz_answers_each"id="A3"><span class="quizz_answers_each_circle">C</span> Answer2</button>
+                    <button  class="quizz_answers_each"id="A4"><span class="quizz_answers_each_circle">D</span> Answer3</button>
+                </div>
             </section>
         </section>
    </section>
@@ -60,7 +64,7 @@
             <h2><span class="num" id="resultnum">8</span>/10</h2>
         </section>
         <section class="explication">
-            <h2>explanation for uncorrect answerst</h2>
+            <h2 class="explication_title">explanation for uncorrect answerst</h2>
             <ul class="answers" id="answers">
                 <!-- <li class="answers_Q" id="answers_Q">Why is AWS more economical than traditional data centers for applications with varying compute workloads?
                     <div class="answers_true" id="answers_true"><span class="answers_circle" id="corr">A</span><p id="exp">The ability to launch instances on demand when needed allows users to launch and terminate instances in response to a varying workload.This is a more economical practice than purchasing enough on-premises servers to handle the peak load.</p></div>
@@ -71,5 +75,6 @@
 
 </body>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
