@@ -216,7 +216,7 @@ body {
 .quizz {
   width: 45rem;
   padding: 2rem;
-  margin-top: 5rem;
+  margin-top: 1rem;
 }
 .quizz_question {
   margin-left: 1rem;
@@ -288,6 +288,17 @@ body {
   -moz-transition: 0 s;
   -ms-transition: 0 s;
   -o-transition: 0 s;
+}
+.quizz .timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.quizz .timer h1 {
+  color: #85CD72;
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 300;
 }
 
 .congrats {

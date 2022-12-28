@@ -21,16 +21,16 @@
          <img class="logo_img" src="sass/img/aws-logo.png" alt="logo pic"> 
       </section>
       <section class="infos">
-      <p class="infos_p">Welcome to this aws quizz where you can test your AWS Practitioner knowledge</p>
-        <section class="alist" >
-            <span class="exclam">!</span>
-            <ul class="infos_list">
-               <li class="infos_list_items">this quizz contains 10 questions</li>
-               <li class="infos_list_items">you have 4 options to choose the right answer from</li>
-               <li class="infos_list_items">there is no time limit </li>
-            </ul>
-        </section>
-     <button class="start_button" id="start_button" type="submit" onclick="startQuizz()">Start</button>
+            <p class="infos_p">Welcome to this aws quizz where you can test your AWS Practitioner knowledge</p>
+            <section class="alist" >
+                <span class="exclam">!</span>
+                <ul class="infos_list">
+                <li class="infos_list_items">This quizz contains 10 questions</li>
+                <li class="infos_list_items">You have 4 options to choose the right answer from</li>
+                <li class="infos_list_items">You have 30 seconds to choose your answer else it's not counted </li>
+                </ul>
+            </section>
+            <button class="start_button" id="start_button" type="submit" onclick="startQuizz()">Start</button>
       </section>
    </section>
 
@@ -43,6 +43,9 @@
             </div>
         </div>
         <section class="quizz" id="quizz">
+            <div class="timer">
+                <h1 class="timeCount" id="timeCount">00 : 30</h1>
+            </div>
             <h2 class="quizz_question" id="quizz_question">question</h2>
             <section  class="quizz_answers" id="quizz_answers">
                 <div class="The2options">
@@ -64,7 +67,7 @@
             <h2><span class="num" id="resultnum">8</span>/10</h2>
         </section>
         <section class="explication">
-            <h2 class="explication_title">explanation for uncorrect answerst</h2>
+            <h2 class="explication_title">explanation for uncorrect answers</h2>
             <ul class="answers" id="answers">
                 <!-- <li class="answers_Q" id="answers_Q">Why is AWS more economical than traditional data centers for applications with varying compute workloads?
                     <div class="answers_true" id="answers_true"><span class="answers_circle" id="corr">A</span><p id="exp">The ability to launch instances on demand when needed allows users to launch and terminate instances in response to a varying workload.This is a more economical practice than purchasing enough on-premises servers to handle the peak load.</p></div>

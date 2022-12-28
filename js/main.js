@@ -12,6 +12,7 @@ let AnswerA  =  document.getElementById("A1");
 let AnswerB  =  document.getElementById("A2");
 let AnswerC  =  document.getElementById("A3");
 let AnswerD  =  document.getElementById("A4");
+let timeCount =  document.getElementById("timeCount");
 
 //========progress=======//
 let p_num = document.getElementById("P-num");
@@ -30,11 +31,11 @@ let explications = [];
 
 let randomQuestions;
 let currentIndex;
-
+let TimeCount;
 moveFirst();
 
-//========clicks=======//
 
+//========clicks=======//
 AnswerA.onclick=function(){
     if(questions[currentIndex].options[0].isCorrect){
         result++
@@ -89,7 +90,6 @@ AnswerD.onclick=function(){
 
 
 //========functions=======//
-
 function startQuizz(){
     pageOne.style.display= "none";
     pageTwo.style.display= "block";
@@ -104,7 +104,8 @@ function startQuizz(){
 
 function NextQuestion(index){
     displayQuestions(randomQuestions[index]);
-    console.log(index);
+    clearInterval(TimeCount)       
+    timer();
 }
 
 function displayQuestions(questions){
@@ -174,13 +175,12 @@ function ShowResult(){
         }else if(result==7 || result==6){
             congrats.innerHTML=" Good Job !"
         }else if(result<=5){
-            congrats.innerHTML=" :/ "
+            congrats.innerHTML=" Meh :/ "
         }
 
 }
 
 function move(){
-
     gsap.from(".quizz_answers_each", { 
         duration: 0.5,
         opacity:0,
@@ -220,6 +220,13 @@ function move(){
         delay: 1,
         ease: 'circ'
     })
+    gsap.from(".timeCount",{
+        duration : 1,
+        opacity:0,
+        y: "-1rem",
+        ease: 'circ',
+        delay:1
+    })
 }
 
 function moveFirst(){
@@ -238,7 +245,7 @@ function moveFirst(){
         duration: 1,
         y: "-1rem",
         opacity:0,
-        ease: 'circ',
+        ease: 'power2',
         delay: 0.5
     })   
     gsap.from(".exclam",{
@@ -252,14 +259,33 @@ function moveFirst(){
         duration: 1,
         y: "-2rem",
         opacity:0,
-        ease: 'circ',
+        ease: 'sine',
         delay: 1.2,
         stagger:0.2
     })   
     gsap.from(".start_button",{
         duration: 1,
         opacity:0,
-        ease: 'circ',
+        ease: 'power2',
         delay:2
     })   
+}
+
+
+function timer(){
+    let seconds = 31;
+    TimeCount = setInterval(function(){
+    seconds--;
+    if(seconds>=0){
+        if(seconds<10){
+            seconds="0"+seconds;
+        }
+        timeCount.innerHTML ="00 : "+seconds;
+    }
+    if(seconds==00){
+        currentIndex++;
+        explications.push(questions[currentIndex].explanation)
+        NextQuestion(currentIndex)
+    }
+    } , 1000)
 }
