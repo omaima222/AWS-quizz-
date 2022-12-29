@@ -32,7 +32,7 @@ let explications = [];
 let randomQuestions;
 let currentIndex;
 let TimeCount;
-moveFirst();
+moveInfo();
 
 
 //========clicks=======//
@@ -109,7 +109,7 @@ function NextQuestion(index){
 }
 
 function displayQuestions(questions){
-    move()
+    moveQuestions()
     Question.innerText = questions.question;
     AnswerA.innerText = questions.options[0].option;
     AnswerB.innerText = questions.options[1].option;
@@ -144,6 +144,7 @@ function displayQuestions(questions){
 }
 
 function ShowResult(){
+        moveRsult()
         pageTwo.style.display ="none"
         pageThree.style.display ="block"
         circle3.classList.add("active");
@@ -180,7 +181,7 @@ function ShowResult(){
 
 }
 
-function move(){
+function moveQuestions(){
     gsap.from(".quizz_answers_each", { 
         duration: 0.5,
         opacity:0,
@@ -193,23 +194,6 @@ function move(){
         duration: 0.7,
         x: "-10rem",
         opacity: 0,
-        ease: 'circ'
-    })
-    gsap.from(".congrats" , {
-        duration: 1,
-        opacity:0,
-        ease: 'circ'
-    })
-    gsap.from(".result" , {
-        duration: 1,
-        opacity:0,
-        y: "-5rem",
-        ease: 'circ'
-    })
-    gsap.from(".explication_title" , {
-        duration: 0.5,
-        opacity:0,
-        delay: 1,
         ease: 'circ'
     })
     gsap.from(".answers_Q" , {
@@ -229,7 +213,7 @@ function move(){
     })
 }
 
-function moveFirst(){
+function moveInfo(){
     gsap.from(".contains_stepper",{
         duration: 1,
         x: "-5rem",
@@ -271,6 +255,25 @@ function moveFirst(){
     })   
 }
 
+function moveRsult(){
+    gsap.from(".congrats" , {
+        duration: 1,
+        opacity:0,
+        ease: 'circ'
+    })
+    gsap.from(".result" , {
+        duration: 1,
+        opacity:0,
+        y: "-5rem",
+        ease: 'circ'
+    })
+    gsap.from(".explication_title" , {
+        duration: 0.5,
+        opacity:0,
+        delay: 1,
+        ease: 'circ'
+    })
+}
 
 function timer(){
     let seconds = 31;
@@ -283,8 +286,12 @@ function timer(){
         timeCount.innerHTML ="00 : "+seconds;
     }
     if(seconds==00){
-        currentIndex++;
+        console.log(currentIndex)
         explications.push(questions[currentIndex].explanation)
+        if(currentIndex>=9){
+            ShowResult()
+        }
+        currentIndex++;
         NextQuestion(currentIndex)
     }
     } , 1000)
