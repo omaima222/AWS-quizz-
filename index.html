@@ -1,7 +1,13 @@
-<?php
- include 'components/head.php';
-?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sass/main.css">
+    <title>Quizz</title>
+</head>
 
 
 <body class="main">
@@ -15,12 +21,12 @@
         </div>
     </div>
 
-   <section class="first_pg"id="first_pg" >
-      <section class="logo">
+    <section class="first_pg"id="first_pg" >
+       <section class="logo">
          <h1 class="logo_text" >aws</h1>   
          <img class="logo_img" src="sass/img/aws-logo.png" alt="logo pic"> 
-      </section>
-      <section class="infos">
+       </section>
+       <section class="infos">
             <p class="infos_p">Welcome to this aws quizz where you can test your AWS Practitioner knowledge</p>
             <section class="alist" >
                 <span class="exclam">!</span>
@@ -31,8 +37,8 @@
                 </ul>
             </section>
             <button class="start_button" id="start_button" type="submit" onclick="startQuizz()">Start</button>
-      </section>
-   </section>
+       </section>
+    </section>
 
    <section class="second_pg" id="second_pg">
         <div class="Allprogress">
@@ -81,3 +87,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
+
+</html>

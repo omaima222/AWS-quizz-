@@ -2,7 +2,7 @@
 .congrats{
     font-weight: 300;
     font-size: 3rem;
-    color: $secondary-color;
+    color: $accent-color;
     text-align: center;
     margin: 0;
 }
@@ -28,7 +28,7 @@
     padding-left: 1rem;
     list-style: decimal;
     li{
-        margin-top: 2rem;
+        margin-top: 4rem;
         p{
             margin-left: 1rem;
         }

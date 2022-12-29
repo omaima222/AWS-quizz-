@@ -36,7 +36,9 @@
         &:active{
             background: $secondary-color;
             @include border($secondary-color);
-            color: $main-color;
+            color: $text-color;
             @include trans(0);
         }
 }
+
+
