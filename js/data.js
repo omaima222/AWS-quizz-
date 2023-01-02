@@ -108,7 +108,7 @@ let questions = [
         'explanation' :[
             { question :   'How would a system administrator add an additional layer of login security to a user s AWS Management Console?'},
             {exp :'Multi-factor authentication (MFA) is a simple best practice that adds an extra layer of protection on top of a username and password. With MFA enabled, when a user signs in to an AWS Management Console, they will be prompted for their username and password (the first factor—what they know), as well as for an authentication code from their MFA device (the second factor—what they have). Taken together, these multiple factors provide increased security for AWS account settings and resources.'},
-            {corr : 'D'},
+            {corr : 'C'},
             { answer :   'Enable multi-factor authentication'},
         ],
 
